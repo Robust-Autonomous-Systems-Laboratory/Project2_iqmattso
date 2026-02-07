@@ -1,0 +1,7 @@
+<launch>
+  <node pkg="gimbal_lock_demo" exec="euler_quaternion_state_publisher" name="slider_parameter_node" output="screen">
+    <!-- <param name="my_speed" value="0"/> -->
+  </node>
+
+  <node pkg="rqt_reconfigure" exec="rqt_reconfigure" name="rqt_reconfigure" />
+</launch>
