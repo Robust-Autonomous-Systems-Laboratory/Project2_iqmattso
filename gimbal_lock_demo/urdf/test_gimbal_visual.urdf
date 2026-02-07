@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<robot name="gimbal_lock_demo">
+
+  <material name="red"><color rgba="0.8 0 0 0.6"/></material>
+  <material name="green"><color rgba="0 0.8 0 0.6"/></material>
+  <material name="blue"><color rgba="0 0 0.8 0.6"/></material>
+  <material name="white"><color rgba="1 1 1 1"/></material>
+
+  <link name="base_link"/>
+
+  <joint name="yaw_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="yaw_ring"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <link name="yaw_ring">
+    <visual>
+      <geometry><cylinder length="0.05" radius="0.3"/></geometry>
+      <material name="blue"/>
+    </visual>
+  </link>
+
+  <joint name="pitch_joint" type="continuous">
+    <parent link="yaw_ring"/>
+    <child link="pitch_ring"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <link name="pitch_ring">
+    <visual>
+      <geometry><cylinder length="0.05" radius="0.2"/></geometry>
+      <material name="green"/>
+    </visual>
+  </link>
+
+  <joint name="roll_joint" type="continuous">
+    <parent link="pitch_ring"/>
+    <child link="roll_ring"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+  </joint>
+
+  <link name="roll_ring">
+    <visual>
+      <geometry><cylinder length="0.05" radius="0.1"/></geometry>
+      <material name="red"/>
+    </visual>
+  </link>
+
+  <joint name="tool_joint" type="fixed">
+    <parent link="roll_ring"/>
+    <child link="tool_link"/>
+  </joint>
+
+  <link name="tool_link">
+    <visual>
+      <origin xyz="0 0 0.1" rpy="0 0 0"/>
+      <geometry><box size="0.02 0.02 0.2"/></geometry>
+      <material name="white"/>
+    </visual>
+  </link>
+
+</robot>

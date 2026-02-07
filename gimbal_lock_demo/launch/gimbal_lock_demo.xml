@@ -1,7 +1,15 @@
 <launch>
+
+  <node pkg="robot_state_publisher" exec="robot_state_publisher">
+    <param name="robot_description" value="$(command 'cat $(find-pkg-share gimbal_lock_demo)/test_gimbal_visual.urdf')"/>
+  </node>
+
   <node pkg="gimbal_lock_demo" exec="euler_quaternion_state_publisher" name="slider_parameter_node" output="screen">
     <!-- <param name="my_speed" value="0"/> -->
   </node>
 
   <node pkg="rqt_reconfigure" exec="rqt_reconfigure" name="rqt_reconfigure" />
+
+  <node pkg="rviz2" exec="rviz2" args="$(find-pkg-share gimbal_lock_demo)/rviz/gimbal.rviz"/>
+
 </launch>
