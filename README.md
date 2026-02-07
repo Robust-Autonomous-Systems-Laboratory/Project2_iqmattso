@@ -1,7 +1,7 @@
 # Demonstrating Gimbal Lock with ROS URDFs
 ### Project 2: Intermediate ROS, tf2, URDFs, rviz, and creating your first complete project repository
 
-### Michigan Tech EE5531 Intro to Robotics, February 6th, 2025
+### Michigan Tech EE5531 Intro to Robotics, February 6th, 2026
 
 ## About the package 
 This package visualizes and controls a ROS URDF (Unified Robot Description Format) with a RQT slider to demonstrate the effect of [gimbal lock](https://en.wikipedia.org/wiki/Gimbal_lock) by controling rotational joint movement with euler angles and quaternions.
