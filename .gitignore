@@ -1,3 +1,8 @@
+# Ignore unused folders in the ROS package:
+gimbal_lock_demo/test/
+gimbal_lock_demo/resource
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
