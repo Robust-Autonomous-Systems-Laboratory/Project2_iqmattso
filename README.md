@@ -38,6 +38,7 @@ RViz will open a predefined configuration file, and an RQT window will open.  In
 
 <u>Figure 1:</u> Ensure only the 'slider_parameter_node' is selected (highlighted in blue on the left column), and drag the sliders to control the model's roll, pitch, and yaw.  Toggle the 'use_quaternions' button to switch from euler angle calculations to quaternion calculations to visualize gimbal lock.
 
+__Note:__ The URDF model will not appear in RVIZ2 until one of the sliders is toggled, publishing the first JointState() message.
 
 
 ## Gimbal Lock Demonstration
